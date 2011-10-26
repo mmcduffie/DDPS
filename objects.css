@@ -1,0 +1,148 @@
+body {
+  padding: 0;
+  background-color: #000000;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+}
+
+.center_box {
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+}
+
+.object_title {
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 20px;
+  width: 754px;
+  padding-top: 5px;
+  padding-left: 6px;
+  padding-bottom: 18px;
+  float: left;
+  border-radius: 10px;
+  background-color: #3D4C4C;
+}
+
+.object_body {
+  top: -60px;
+  padding-left: 10px;
+  padding-top: 12px;
+  background-color: #3D4C4C;
+  padding-bottom: 12px;
+  margin-top: -9px;
+}
+
+.up {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.object_options {
+  float: right;
+  margin: 5px;
+}
+
+.object_header {
+  border-radius: 10px;
+  width: 800px;
+  height: 48px;
+  background-color: #293333;
+}
+
+.object_footer {
+  background-color: #3D4C4C;
+  height: 20px;
+  border-radius: 10px;
+  margin-top: -10px;
+}
+
+.slot {
+  width: 770px;
+  height: 30px;
+  background-color: #293333;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.slot_options {
+  width: 30px;
+  height: 28px;
+  overflow: hidden;
+  background-color: #3D4C4C;
+  border: 1px solid #293333;
+  float: left;
+}
+
+.slot_name {
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  float: left;
+  /*width: 200px;*/
+  height: 24px;
+  background-color: #3D4C4C;
+  border-top: 1px solid #293333;
+  border-right: 1px solid #293333;
+  border-bottom: 1px solid #293333;
+  overflow: hidden;
+}
+
+.call {
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  float: left;
+  height: 24px;
+  background-color: #4C0F00;
+  border-top: 1px solid #293333;
+  border-right: 1px solid #293333;
+  border-bottom: 1px solid #293333;
+  overflow: hidden;
+}
+
+.reference {
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  float: left;
+  height: 24px;
+  background-color: #0F3D4C;
+  border-top: 1px solid #293333;
+  border-right: 1px solid #293333;
+  border-bottom: 1px solid #293333;
+  overflow: hidden;
+}
+
+.data {
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  float: left;
+  height: 24px;
+  background-color: #004C00;
+  border-top: 1px solid #293333;
+  border-right: 1px solid #293333;
+  border-bottom: 1px solid #293333;
+  overflow: hidden;
+}
