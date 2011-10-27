@@ -2,37 +2,13 @@
 <html>
   <head>
     <script src="jquery.js"></script>
+    <script src="mustache.js"></script>
     <script src="ddps.js"></script>
     <link rel="stylesheet" type="text/css" href="objects.css" />
   </head>
   <body>
     <div class="center_box">
-      <img class="up" src="up.png"></img>
-      <div class="object_frame">
-        <div class="object_header">
-          <div class="object_title">Object Title</div>
-          <img class="object_options" src="gear.png"></img>
-        </div>
-        <div class="object_body">
-          <div class="slot">
-            <div class="slot_options">
-              <img src="delete.png"></img>
-            </div>
-            <div class="slot_name">Attribute Name</div>
-            <div class="call">Function Name</div>
-            <div class="reference">Object Reference</div>
-            <div class="data">Data</div>
-          </div>
-          <div class="slot">
-            <div class="slot_options">
-              <img src="delete.png"></img>
-            </div>
-            <div class="slot_name">Attribute Name</div>
-            <div class="data">Data</div>
-          </div>
-        </div>
-        <div class="object_footer"></div>
-      </div>
+      <div id="object"></div>
     </div>
   </body>
 </html>

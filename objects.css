@@ -59,6 +59,11 @@ html {
 }
 
 .object_footer {
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 10px;
+  padding-left: 10px;
   background-color: #3D4C4C;
   height: 20px;
   border-radius: 10px;
