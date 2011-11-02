@@ -14,20 +14,19 @@ $(document).ready(function() {
   }
   
   var test_object = new object("Object Name","proc_object",[]);
-  var test_object2 = new object("Object Name","function_object",[]);
-  var test_object3 = new object("Object Name","function_object",[]);
+  var test_object2 = new object("Function Name","function_object",[]);
+  var test_object3 = new object("Function Name","function_object",[]);
   
   test_object.attributes = [{ name: "nill", value: "nill", ddps_object_id: "2" },{ name: "Number", value: "3", ddps_object_id: "nill" }];
   
   function find_object(id_to_find) {
+    var found;
     for (var i = 0; i < object_table.length; i++) {
-      if (object_table[i].ddps_object_id === id_to_find) {
-        return object_table[i];
-      }
-      else {
-        return "ERROR: Object not found.";
+      if (object_table[i].ddps_object_id == id_to_find) {
+		found = object_table[i];
       }
     }
+	return found;
   }
   
   function render_object(object) {
@@ -44,8 +43,8 @@ $(document).ready(function() {
             <div class=\"slot_options\">\
               <img src=\"delete.png\"></img>\
             </div>\
-            <div class=\"slot_name\">" + ddps_object_id + "</div>\
-            <div class=\"call\">" + object_table.length + "Function Name</div>\
+            <div class=\"slot_name\">" + name + "</div>\
+            <div class=\"call\">" + find_object(ddps_object_id).name + "</div>\
             <div class=\"reference\">Object Reference</div>\
             <div class=\"data\">" + value + "</div>\
           </div>";
