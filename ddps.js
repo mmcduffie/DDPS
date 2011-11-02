@@ -15,9 +15,9 @@ $(document).ready(function() {
   
   var test_object = new object("Object Name","proc_object",[]);
   var test_object2 = new object("Function Name","function_object",[]);
-  var test_object3 = new object("Function Name","function_object",[]);
+  var test_object3 = new object("Object Name","basic_object",[]);
   
-  test_object.attributes = [{ name: "nill", value: "nill", ddps_object_id: "2" },{ name: "Number", value: "3", ddps_object_id: "nill" }];
+  test_object.attributes = [{ name: "nill", value: "nill", ddps_object_id: "2" },{ name: "Number", value: "3", ddps_object_id: "nill" },{ name: "nill", value: "nill", ddps_object_id: "3" }];
   
   function find_object(id_to_find) {
     var found;
@@ -37,17 +37,27 @@ $(document).ready(function() {
       var ddps_object_id = object.attributes[i].ddps_object_id;
       var html = "";
       if ( name === "nill" && value === "nill" ) { // reference.
-        
+        var type = find_object(ddps_object_id).ddps_object_type;
+        if (type === "function_object") {
         html = "\
           <div class=\"slot\">\
             <div class=\"slot_options\">\
               <img src=\"delete.png\"></img>\
             </div>\
-            <div class=\"slot_name\">" + name + "</div>\
+            <div class=\"slot_name\">" + ddps_object_id + "</div>\
             <div class=\"call\">" + find_object(ddps_object_id).name + "</div>\
-            <div class=\"reference\">Object Reference</div>\
-            <div class=\"data\">" + value + "</div>\
           </div>";
+        }
+        else {
+        html = "\
+          <div class=\"slot\">\
+            <div class=\"slot_options\">\
+              <img src=\"delete.png\"></img>\
+            </div>\
+            <div class=\"slot_name\">" + ddps_object_id + "</div>\
+            <div class=\"reference\">" + find_object(ddps_object_id).name + "</div>\
+          </div>";
+        }
       }
       else if ( ddps_object_id === "nill" ){ // value.
         html = "\
