@@ -17,7 +17,7 @@ $(document).ready(function() {
   var test_object2 = new object("Function Name","function_object",[]);
   var test_object3 = new object("Object Name","basic_object",[]);
   
-  test_object.attributes = [{ name: "nill", value: "nill", ddps_object_id: "2" },{ name: "Number", value: "3", ddps_object_id: "nill" },{ name: "nill", value: "nill", ddps_object_id: "3" }];
+  test_object.attributes = [{ name: "nill", value: "nill", ddps_object_id: "2", params: [{ name: "nill", value: "5", ddps_object_id: "nill", params: [] }] },{ name: "Number", value: "3", ddps_object_id: "nill", params: [] },{ name: "nill", value: "nill", ddps_object_id: "3", params: [] }];
   
   function find_object(id_to_find) {
     var found;
@@ -32,20 +32,24 @@ $(document).ready(function() {
   function render_object(object) {
     var slot_html = "";
     for (var i = 0; i < object.attributes.length; i++) {
-      var name = object.attributes[i].name;
-      var value = object.attributes[i].value;
-      var ddps_object_id = object.attributes[i].ddps_object_id;
+      var attrib = object.attributes[i];
+      var name = attrib.name;
+      var value = attrib.value;
+      var ddps_object_id = attrib.ddps_object_id;
       var html = "";
       if ( name === "nill" && value === "nill" ) { // reference.
-        var type = find_object(ddps_object_id).ddps_object_type;
+        var referenced_object = find_object(ddps_object_id);
+        var type = referenced_object.ddps_object_type;
         if (type === "function_object") {
+        var params = attrib.params;
         html = "\
           <div class=\"slot\">\
             <div class=\"slot_options\">\
               <img src=\"delete.png\"></img>\
             </div>\
             <div class=\"slot_name\">" + ddps_object_id + "</div>\
-            <div class=\"call\">" + find_object(ddps_object_id).name + "</div>\
+            <div class=\"call\">" + referenced_object.name + "</div>\
+            <div class=\"call\">" + params + "</div>\
           </div>";
         }
         else {
@@ -55,7 +59,7 @@ $(document).ready(function() {
               <img src=\"delete.png\"></img>\
             </div>\
             <div class=\"slot_name\">" + ddps_object_id + "</div>\
-            <div class=\"reference\">" + find_object(ddps_object_id).name + "</div>\
+            <div class=\"reference\">" + referenced_object.name + "</div>\
           </div>";
         }
       }
